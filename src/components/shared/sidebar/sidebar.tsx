@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { ModeToggle } from "../../mode-toggle";
-import { HiOutlineUserCircle } from "react-icons/hi";
+import { HiOutlineUserCircle, HiOutlineAcademicCap  } from "react-icons/hi";
+import { FaBook } from "react-icons/fa";
 const Dashboard = () => {
-    const [isOpen, setIsOpen] = useState(true);
-    const activeListStyle = "flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group bg-gray-300  dark:bg-gray-700";
-    const defaultListStyle = "flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group";
+  const [isOpen, setIsOpen] = useState(true);
+  const activeListStyle =
+    "flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group bg-gray-300  dark:bg-gray-700 text-sm";
+  const defaultListStyle =
+    "flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group text-sm";
   return (
     <div>
       <button
@@ -44,47 +47,28 @@ const Dashboard = () => {
             <li>
               <NavLink
                 to="/profile"
-                className={({isActive}) => isActive ? activeListStyle : defaultListStyle}
+                className={({ isActive }) =>
+                  isActive ? activeListStyle : defaultListStyle
+                }
               >
-                <HiOutlineUserCircle className="w-5 h-5"/>
+                <HiOutlineUserCircle className="w-5 h-5" />
                 <span className="ms-3">Profile</span>
               </NavLink>
             </li>
             <li>
-              <button
-                type="button"
-                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                aria-controls="dropdown-example"
-                data-collapse-toggle="dropdown-example"
+              <NavLink
+                to={'/faculty'}
+                className={({ isActive }) =>
+                  isActive
+                    ? activeListStyle
+                    : defaultListStyle
+                }
               >
-                <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 18 21"
-                >
-                  <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z" />
-                </svg>
-                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
-                  E-commerce
+                <HiOutlineAcademicCap className="h-5 w-5 opacity-70" />
+                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap text-sm font-medium">
+                  Faculty member
                 </span>
-                <svg
-                  className="w-3 h-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
+              </NavLink>
               <ul id="dropdown-example" className="hidden py-2 space-y-2">
                 <li>
                   <a
@@ -111,6 +95,62 @@ const Dashboard = () => {
                   </a>
                 </li>
               </ul>
+            </li>
+            <li>
+              <details className="group [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                <summary className="group flex items-center justify-between rounded-lg py-2 w-full p-2 text-base text-gray-900 transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                  <div className="flex items-center gap-2">
+                    <FaBook className="h-4 w-4 opacity-70" />
+
+                    <span className="text-sm font-medium dark: text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                      {" "}
+                      Courses and Routines{" "}
+                    </span>
+                  </div>
+
+                  <span className="shrink-0 transition duration-300 group-open:-rotate-180">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </summary>
+
+                <ul className="mt-2 space-y-1 px-4">
+                  <li>
+                    <NavLink
+                      to={`/courses`}
+                      className={({ isActive }) =>
+                        isActive
+                          ? activeListStyle + " pl-6"
+                          : defaultListStyle + " pl-6"
+                      }
+                    >
+                      Courses
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to={`/results`}
+                      className={({ isActive }) =>
+                        isActive
+                          ? activeListStyle + " pl-6"
+                          : defaultListStyle + " pl-6"
+                      }
+                    >
+                      Results
+                    </NavLink>
+                  </li>
+                </ul>
+              </details>
             </li>
             <li>
               <NavLink
