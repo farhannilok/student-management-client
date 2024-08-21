@@ -121,12 +121,12 @@ export function Registration() {
                       {isVisible ? (
                         <HiOutlineEyeOff
                           onClick={() => setIsVisible(!isVisible)}
-                          className="w-5 h-5 absolute right-6 cursor-pointer bottom-2"
+                          className="w-5 h-5 absolute right-6 cursor-pointer inset-y-9"
                         />
                       ) : (
                         <HiOutlineEye
                           onClick={() => setIsVisible(!isVisible)}
-                          className="w-5 h-5 absolute right-6 cursor-pointer bottom-2"
+                          className="w-5 h-5 absolute right-6 cursor-pointer inset-y-9"
                         />
                       )}
                       <FormMessage />
@@ -152,12 +152,12 @@ export function Registration() {
                       {isVisible ? (
                         <HiOutlineEyeOff
                           onClick={() => setIsVisible(!isVisible)}
-                          className="w-5 h-5 absolute right-6 cursor-pointer bottom-2"
+                          className="w-5 h-5 absolute right-6 cursor-pointer inset-y-9"
                         />
                       ) : (
                         <HiOutlineEye
                           onClick={() => setIsVisible(!isVisible)}
-                          className="w-5 h-5 absolute right-6 cursor-pointer bottom-2"
+                          className="w-5 h-5 absolute right-6 cursor-pointer inset-y-9"
                         />
                       )}
                       <FormMessage />

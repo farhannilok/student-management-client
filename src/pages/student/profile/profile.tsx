@@ -18,13 +18,29 @@ const Profile = () => {
           </p>
           <p className="dark:text-white text-slate-900">{user.name}</p>
           <p className="dark:text-white text-slate-900 text-lg font-bold">
+            Student Id
+          </p>
+          <p className="dark:text-white text-slate-900">{"20100107"}</p>
+          <p className="dark:text-white text-slate-900 text-lg font-bold">
             Email
           </p>
           <p className="dark:text-white text-slate-900">{user.email}</p>
           <p className="dark:text-white text-slate-900 text-lg font-bold">
+            Gender
+          </p>
+          <p className="dark:text-white text-slate-900">{"Male"}</p>
+          <p className="dark:text-white text-slate-900 text-lg font-bold">
+            Date
+          </p>
+          <p className="dark:text-white text-slate-900">{"27-01-2001"}</p>
+          <p className="dark:text-white text-slate-900 text-lg font-bold">
             Total credit
           </p>
           <p className="dark:text-white text-slate-900">{150}</p>
+          <p className="dark:text-white text-slate-900 text-lg font-bold">
+            Enrollment Year
+          </p>
+          <p className="dark:text-white text-slate-900">{2020}</p>
           <p className="dark:text-white text-slate-900 text-lg font-bold">
             Completed Credit
           </p>
@@ -37,6 +53,10 @@ const Profile = () => {
             Session
           </p>
           <p className="dark:text-white text-slate-900">{"2020"}</p>
+          <p className="dark:text-white text-slate-900 text-lg font-bold">
+            Phone
+          </p>
+          <p className="dark:text-white text-slate-900">{"01299382903"}</p>
         </div>
       </Card>
     </div>

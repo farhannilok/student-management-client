@@ -28,8 +28,7 @@ import toast from "react-hot-toast";
 
 const loginSchema = z.object({
   email: z
-    .string({ message: "Email required" })
-    .email("Please enter a valid email"),
+    .string({ message: "user name required" }).max(20, "user name is too big"),
   password: z
     .string({ message: "Password required" })
     .min(6, "Password must be longer than six character")
@@ -66,14 +65,14 @@ export function Login() {
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <FormField
                 control={form.control}
-                name="email"
+                name="username"
                 render={({ field }) => (
                   <FormItem className="mb-2">
-                    <Label>Email</Label>
+                    <Label>ID</Label>
                     <FormControl>
                       <Input
-                        id="email"
-                        placeholder="Enter your email"
+                        id="id"
+                        placeholder="Enter your user name"
                         {...field}
                       />
                     </FormControl>
@@ -99,12 +98,12 @@ export function Login() {
                       {isVisible ? (
                         <HiOutlineEyeOff
                           onClick={() => setIsVisible(!isVisible)}
-                          className="w-5 h-5 absolute right-6 cursor-pointer bottom-2"
+                          className="w-5 h-5 absolute right-6 cursor-pointer inset-y-9"
                         />
                       ) : (
                         <HiOutlineEye
                           onClick={() => setIsVisible(!isVisible)}
-                          className="w-5 h-5 absolute right-6 cursor-pointer bottom-2"
+                          className="w-5 h-5 absolute right-6 cursor-pointer inset-y-9"
                         />
                       )}
                       <FormMessage />
@@ -113,9 +112,6 @@ export function Login() {
                 )}
               />
               <CardFooter className="flex justify-between px-0 py-5">
-                <Link to={`/register`} className="text-sm underline">
-                  new here, register now
-                </Link>
                 <Button type="submit">Submit</Button>
               </CardFooter>
             </form>

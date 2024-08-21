@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import { Login } from "../pages/authentication/login/login";
-import { Registration } from "../pages/authentication/registration/registration";
 import Profile from "../pages/student/profile/profile";
+import CourseTable from "../pages/student/course-table/course-table";
+import ResultTable from "../pages/student/results/results-table";
+import FacultyTable from "../pages/faculty/faculty-table";
 
 const router = createBrowserRouter([
     {
@@ -12,16 +14,24 @@ const router = createBrowserRouter([
             {
                 path: "/profile",
                 element: <Profile />
-            }
+            },
+            {
+                path: "/courses",
+                element: <CourseTable />
+            },
+            {
+                path: "/results",
+                element: <ResultTable />
+            },
+            {
+                path: "/faculty",
+                element: <FacultyTable />
+            },
         ]
     },
     {
         path: '/login',
         element: <Login />
-    },
-    {
-        path: '/register',
-        element: <Registration />
     },
 ])
 
