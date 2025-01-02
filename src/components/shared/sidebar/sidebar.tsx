@@ -149,6 +149,18 @@ const Dashboard = () => {
                       Results
                     </NavLink>
                   </li>
+                  <li>
+                    <NavLink
+                      to={`/subject-registration`}
+                      className={({ isActive }) =>
+                        isActive
+                          ? activeListStyle + " pl-6"
+                          : defaultListStyle + " pl-6"
+                      }
+                    >
+                      Subject Registration
+                    </NavLink>
+                  </li>
                 </ul>
               </details>
             </li>

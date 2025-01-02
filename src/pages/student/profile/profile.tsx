@@ -1,7 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "../../../components/ui/card";
 const Profile = () => {
-  const user = JSON.parse(localStorage.getItem("auth"));
+  // const user = JSON.parse(localStorage.getItem("auth"));
+  // console.log(user);
   return (
     <div className="flex justify-center items-center h-[70vh]">
       <Card className="p-5 w-[700px] hover:shadow-md">
@@ -16,7 +17,7 @@ const Profile = () => {
           <p className="dark:text-white text-slate-900 text-lg font-bold">
             Full Name
           </p>
-          <p className="dark:text-white text-slate-900">{user.name}</p>
+          <p className="dark:text-white text-slate-900">{"Abdullah"}</p>
           <p className="dark:text-white text-slate-900 text-lg font-bold">
             Student Id
           </p>
@@ -24,7 +25,7 @@ const Profile = () => {
           <p className="dark:text-white text-slate-900 text-lg font-bold">
             Email
           </p>
-          <p className="dark:text-white text-slate-900">{user.email}</p>
+          <p className="dark:text-white text-slate-900">{"abdullah@gmail.com"}</p>
           <p className="dark:text-white text-slate-900 text-lg font-bold">
             Gender
           </p>
