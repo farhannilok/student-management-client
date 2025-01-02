@@ -5,6 +5,7 @@ import Profile from "../pages/student/profile/profile";
 import CourseTable from "../pages/student/course-table/course-table";
 import ResultTable from "../pages/student/results/results-table";
 import FacultyTable from "../pages/faculty/faculty-table";
+import SubjectRegistration from "../pages/student/subject-registration/subject-registration";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: "/faculty",
                 element: <FacultyTable />
+            },
+            {
+                path: "/subject-registration",
+                element: <SubjectRegistration />
             },
         ]
     },
