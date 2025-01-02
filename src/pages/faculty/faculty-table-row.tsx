@@ -81,50 +81,50 @@ const FacultyTableRow = ({ faculty, index }) => {
 
         <tr className='border-b dark:border-b-gray-100'>
             
-            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm text-center dark:bg-inherit dark:text-white'>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm text-center dark:bg-inherit dark:text-foreground'>
                 <span
-                    className='text-gray-900 whitespace-no-wrap block dark:text-gray-200'
+                    className='text-foreground whitespace-no-wrap block dark:text-foreground'
                 >
 
                     {index + 1}
                 </span>
             </td>
-            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm text-center dark:bg-inherit dark:text-white'>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm text-center dark:bg-inherit dark:text-foreground'>
                 <span
-                    className='text-gray-900 whitespace-no-wrap block dark:text-gray-200'
+                    className='text-foreground whitespace-no-wrap block dark:text-foreground'
                 >
 
                     {faculty?.firstName} {faculty?.lastName}
                 </span>
             </td>
-            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm text-center dark:bg-inherit dark:text-white'>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm text-center dark:bg-inherit dark:text-foreground'>
                 <span
-                    className='text-gray-900 whitespace-no-wrap block dark:text-gray-200'
+                    className='text-gray-900 whitespace-no-wrap block dark:text-foreground'
                 >
 
                     {faculty?.department}
                 </span>
             </td>
-            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm text-center dark:bg-inherit dark:text-white'>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm text-center dark:bg-inherit dark:text-foreground'>
                 <span
-                    className='text-gray-900 whitespace-no-wrap block dark:text-gray-200'
+                    className='text-gray-900 whitespace-no-wrap block dark:text-foreground'
                 >
 
                     {faculty?.designation}
                 </span>
             </td>
-            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm text-center dark:bg-inherit dark:text-white'>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm text-center dark:bg-inherit dark:text-foreground'>
                 <span
-                    className='text-gray-900 whitespace-no-wrap block dark:text-gray-200'
+                    className='text-foreground whitespace-no-wrap block dark:text-foreground'
                 >
 
                     {faculty?.email}
                 </span>
             </td>
-            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm text-center dark:bg-inherit dark:text-white'>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm text-center dark:bg-inherit dark:text-foreground'>
 
             <span
-                    className='text-gray-900 whitespace-no-wrap block dark:text-gray-200'
+                    className='text-foreground whitespace-no-wrap block dark:text-foreground'
                 >
 
                     {faculty?.phone}

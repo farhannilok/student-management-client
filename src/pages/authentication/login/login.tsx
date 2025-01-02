@@ -72,7 +72,7 @@ export function Login() {
                     <FormControl>
                       <Input
                         id="id"
-                        placeholder="Enter your user name"
+                        placeholder="Enter your id"
                         {...field}
                       />
                     </FormControl>

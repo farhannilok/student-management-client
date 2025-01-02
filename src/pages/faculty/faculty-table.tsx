@@ -9,98 +9,103 @@
 // import { useQuery } from 'react-query';
 // import useAxiosSecure from '../../../../Hooks/useAxiosSecure';
 // import ErrorPage from '../../../Shared/ErrorPage/ErrorPage';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 import { useQuery } from "@tanstack/react-query";
-import CourseTableRow from "./course-table-row";
 import FacultyTableRow from "./faculty-table-row";
-
+import { Button } from "../../components/ui/button";
 
 const FacultyTable = () => {
-    // const axiosSecure = useAxiosSecure();
-    // const [searchQuery, setSearchQuery] = useState('')
-    // const { branchID, res_id } = useRestauarantAndBranch();
+  // const axiosSecure = useAxiosSecure();
+  // const [searchQuery, setSearchQuery] = useState('')
+  // const { branchID, res_id } = useRestauarantAndBranch();
 
-    // const location = useLocation();
+  // const location = useLocation();
 
-    // const reqURLData = {};
+  // const reqURLData = {};
 
+  // if (location.pathname === '/employee-list') {
+  //     reqURLData.reqURL = `/restaurant/${res_id}/branch/${branchID}/all-employee-list`;
+  //     reqURLData.h1 = "Employee List"
 
-    // if (location.pathname === '/employee-list') {
-    //     reqURLData.reqURL = `/restaurant/${res_id}/branch/${branchID}/all-employee-list`;
-    //     reqURLData.h1 = "Employee List"
+  // } else {
+  //     reqURLData.reqURL = `/restaurant/${res_id}/all-employee-list`;
+  //     reqURLData.h1 = "All Employee List"
+  // }
 
-    // } else {
-    //     reqURLData.reqURL = `/restaurant/${res_id}/all-employee-list`;
-    //     reqURLData.h1 = "All Employee List"
-    // }
+  const {
+    isLoading,
+    error,
+    data: data = [],
+    refetch,
+  } = useQuery({
+    queryKey: ["faculty"],
+    queryFn: async () => {
+      // const res = await axiosSecure(reqURLData.reqURL);
+      const res = [
+        {
+          code: 201,
+          subject: "CSE Fundamental",
+          firstName: "Mr. Abdus",
+          lastName: "Salam",
+          department: "CSE",
+          designation: "Lecturer",
+          email: "hello@gmail.com",
+          phone: "0189330033",
+        },
+        {
+          code: 202,
+          subject: "Neural Network",
+          firstName: "Mr. Abdus",
+          lastName: "Salam",
+          department: "CSE",
+          designation: "Lecturer",
+          email: "hello@gmail.com",
+          phone: "0189330033",
+          preRequisite: "Artificial Intelligence",
+        },
+        {
+          code: 203,
+          subject: "English",
+          firstName: "Mr. Abdus",
+          lastName: "Salam",
+          department: "CSE",
+          designation: "Lecturer",
+          email: "hello@gmail.com",
+          phone: "0189330033",
+        },
+        {
+          code: 204,
+          subject: "Networking",
+          firstName: "Mr. Abdus",
+          lastName: "Salam",
+          department: "CSE",
+          designation: "Lecturer",
+          email: "hello@gmail.com",
+          phone: "0189330033",
+        },
+      ];
+      // console.log(res.data)
+      // return res.data
+      return res;
+    },
+  });
 
-    const { isLoading, error, data: data = [], refetch } = useQuery({
-        queryKey: ['faculty'],
-        queryFn: async () => {
-            // const res = await axiosSecure(reqURLData.reqURL);
-            const res = [
-                {
-                    code: 201,
-                    subject: "CSE Fundamental",
-                    firstName: "Mr. Abdus",
-                    lastName: "Salam",
-                    department: "CSE",
-                    designation: "Lecturer",
-                    email: "hello@gmail.com",
-                    phone: "0189330033",
+  // if (error) {
+  //     return <ErrorPage />
+  // }
 
-
-                },
-                {
-                    code: 202,
-                    subject: "Neural Network",
-                    firstName: "Mr. Abdus",
-                    lastName: "Salam",
-                    department: "CSE",
-                    designation: "Lecturer",
-                    email: "hello@gmail.com",
-                    phone: "0189330033",
-                    preRequisite: "Artificial Intelligence"
-                },
-                {
-                    code: 203,
-                    subject: "English",
-                    firstName: "Mr. Abdus",
-                    lastName: "Salam",
-                    department: "CSE",
-                    designation: "Lecturer",
-                    email: "hello@gmail.com",
-                    phone: "0189330033",
-
-
-                },
-                {
-                    code: 204,
-                    subject: "Networking",
-                    firstName: "Mr. Abdus",
-                    lastName: "Salam",
-                    department: "CSE",
-                    designation: "Lecturer",
-                    email: "hello@gmail.com",
-                    phone: "0189330033",
-
-
-                },
-            ]
-            // console.log(res.data)
-            // return res.data
-            return res
-        }
-    })
-
-    // if (error) {
-    //     return <ErrorPage />
-    // }
-
-
-    return (
-        <section className='max-w-[1600px] mx-auto'>
-            {/* <SetTitle title={reqURLData?.h1} />
+  return (
+    <section className="max-w-[1600px] mx-auto">
+      {/* <SetTitle title={reqURLData?.h1} />
 
             <div className='flex  gap-3 '>
                 <div className='w-full '>
@@ -112,7 +117,7 @@ const FacultyTable = () => {
                 </div>
 
             </div> */}
-            {/* <div>
+      {/* <div>
 
                 <div className="relative max-w-md w-full mt-4">
 
@@ -146,45 +151,71 @@ const FacultyTable = () => {
                     </span>
                 </div>
             </div> */}
-            <div className=''>
-                <div className='-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto'>
-                    <div className='inline-block min-w-full shadow rounded-lg overflow-hidden'>
-                        {
-                            // isLoading ? <LoadingPage />
-                            //     :
-                                <>
-                                    <table className='min-w-full leading-normal'>
-                                        <thead>
-                                            <tr>
-                                                <th
-                                                    scope='col'
-                                                    className='px-5 py-3 bg-white dark:border-gray-200 dark:bg-inherit dark:text-white border-b border-gray-200 text-gray-800 text-sm uppercase font-medium text-center'
-                                                >
-                                                    no.
-                                                </th>
-                                                <th
-                                                    scope='col'
-                                                    className='px-5 py-3 bg-white dark:border-gray-200 dark:bg-inherit dark:text-white border-b border-gray-200 text-gray-800 text-sm uppercase font-medium text-center'
-                                                >
-                                                    Faculty Name
-                                                </th>
-                                                <th
-                                                    scope='col'
-                                                    className='px-5 py-3 bg-white dark:border-gray-200 dark:bg-inherit dark:text-white border-b border-gray-200 text-gray-800 text-sm uppercase font-medium text-center'
-                                                >department</th>
-                                                <th
-                                                    scope='col'
-                                                    className='px-5 py-3 bg-white dark:border-gray-200 dark:bg-inherit dark:text-white border-b border-gray-200 text-gray-800 text-sm uppercase font-medium text-center'
-                                                >designation</th>
-                                                <th
-                                                    scope='col'
-                                                    className='px-5 py-3 bg-white dark:border-gray-200 dark:bg-inherit dark:text-white border-b border-gray-200 text-gray-800 text-sm uppercase font-medium text-center'
-                                                >email</th>
-                                                <th
-                                                    scope='col'
-                                                    className='px-5 py-3 bg-white dark:border-gray-200 dark:bg-inherit dark:text-white border-b border-gray-200 text-gray-800 text-sm uppercase font-medium text-center'
-                                                >phone</th>
-                                                {/* <th
+      <div className="flex items-center gap-3">
+        <Select>
+          <SelectTrigger className="w-1/3">
+            <SelectValue placeholder="Select department" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Select</SelectLabel>
+              <SelectItem value="apple">Department of English</SelectItem>
+              <SelectItem value="banana">Department of Law</SelectItem>
+              <SelectItem value="blueberry">Department of CSE</SelectItem>
+              <SelectItem value="grapes">Department of Pharmacy</SelectItem>
+              <SelectItem value="pineapple">Department of Textile</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        <Button>Submit</Button>
+      </div>
+      <div className="">
+        <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+          <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
+            {
+              // isLoading ? <LoadingPage />
+              //     :
+              <>
+                <table className="min-w-full leading-normal">
+                  <thead>
+                    <tr>
+                      <th
+                        scope="col"
+                        className="px-5 py-3 bg-white dark:border-gray-200 dark:bg-inherit dark:text-white border-b border-gray-200 text-gray-800 text-sm uppercase font-medium text-center"
+                      >
+                        no.
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-5 py-3 bg-white dark:border-gray-200 dark:bg-inherit dark:text-white border-b border-gray-200 text-gray-800 text-sm uppercase font-medium text-center"
+                      >
+                        Faculty Name
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-5 py-3 bg-white dark:border-gray-200 dark:bg-inherit dark:text-white border-b border-gray-200 text-gray-800 text-sm uppercase font-medium text-center"
+                      >
+                        department
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-5 py-3 bg-white dark:border-gray-200 dark:bg-inherit dark:text-white border-b border-gray-200 text-gray-800 text-sm uppercase font-medium text-center"
+                      >
+                        designation
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-5 py-3 bg-white dark:border-gray-200 dark:bg-inherit dark:text-white border-b border-gray-200 text-gray-800 text-sm uppercase font-medium text-center"
+                      >
+                        email
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-5 py-3 bg-white dark:border-gray-200 dark:bg-inherit dark:text-white border-b border-gray-200 text-gray-800 text-sm uppercase font-medium text-center"
+                      >
+                        phone
+                      </th>
+                      {/* <th
                                                     scope='col'
                                                     className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800 text-sm uppercase font-normal text-center'
                                                 >
@@ -196,31 +227,34 @@ const FacultyTable = () => {
                                                 >
                                                     Action
                                                 </th> */}
-                                            </tr>
-                                        </thead>
-                                        {/* <tbody>{data && Array.isArray(data) && data.map((employee, _idx) =>
+                    </tr>
+                  </thead>
+                  {/* <tbody>{data && Array.isArray(data) && data.map((employee, _idx) =>
                                             <AllEmployeeListRow
                                                 key={_idx}
                                                 employee={employee}
                                                 axiosSecure={axiosSecure}
                                                 refetch={refetch}
                                             />)}</tbody> */}
-                                        <tbody>{data && Array.isArray(data) && data.map((faculty, _idx) =>
-                                            <FacultyTableRow
-                                                key={_idx}
-                                                index={_idx}
-                                                faculty={faculty}
-                                            />)}</tbody>
-                                    </table>
-                                </>
-                        }
-
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    );
+                  <tbody>
+                    {data &&
+                      Array.isArray(data) &&
+                      data.map((faculty, _idx) => (
+                        <FacultyTableRow
+                          key={_idx}
+                          index={_idx}
+                          faculty={faculty}
+                        />
+                      ))}
+                  </tbody>
+                </table>
+              </>
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default FacultyTable;
